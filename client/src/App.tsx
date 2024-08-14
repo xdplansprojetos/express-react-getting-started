@@ -7,8 +7,8 @@ export default function App() {
   const [response, setResponse] = useState("");
 
   async function sayHello() {
-    const url = process.env.REACT_APP_EXPRESS_API_URL;
-    const res = await fetch(`${url}?name=${name}`);
+    const url = import.meta.env.VITE_API_URL;
+    const res = await fetch(`${url}/hello?name=${name}`);
     const data = await res.json();
     setResponse(data.message);
   }
